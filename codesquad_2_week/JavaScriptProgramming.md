@@ -105,22 +105,22 @@
     2. 단, var 키워드를 빼먹고 변수를 선언할 경우 **전역 변수**로 선언 된다.
 
 ```javascript
-    function f1() {                             function f1() {
-        var a = 10;                                 var a = 10;
-        f2();                                       f2();
-    }                                           }
+    function f1() {                                 function f1() {
+        var a = 10;                                     var a = 10;
+        f2();                                           f2();
+    }                                               }
     
-    function f2() {                             function f2() {
-        console.log("호출 실행");                     return a;
-    }                                           }
+    function f2() {                                 function f2() {
+        console.log("호출 실행");                        return a;
+    }                                               }
     
-    f1();                                      f1();
+    f1();                                           f1();
     
-    // 실행 결과                                 // 실행 결과
-    /*                                         /*
-    호출 실행                                    Uncaught Reference Error
-                                               : a is not defined
-    */                                          */
+    // 실행 결과                                      // 실행 결과
+    /*                                              /*
+    호출 실행                                         Uncaught Reference Error
+                                                    : a is not defined
+    */                                              
 ```                  
 4. 렉시컬 특성
     1. **렉시컬 특성**이란 함수 실행시 유효 범위를 함수 실행 환경이 아닌 **함수 정의 환경**으로 참조하는 특성
