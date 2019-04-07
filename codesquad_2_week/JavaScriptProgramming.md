@@ -155,7 +155,7 @@
     }
 ```
 * 함수 호이스팅에 있어서 한가지 기억해야할 것은 "**함수 선언문 방식만 호이스팅이 가능하다.**" 라는 점이다.
-```javscript
+```javascript
     // 함수 선언문
     hoistingExam();
     function hoistingExam() {
@@ -179,7 +179,7 @@
     hoistingExam2 of object is not a function
     */
 ```             
-```javscript
+```javascript
     // Function 생성자
     hoistingExam3();  
     var hoistingExam3 = new Function("","return console.log('Ya-ho!!');");
