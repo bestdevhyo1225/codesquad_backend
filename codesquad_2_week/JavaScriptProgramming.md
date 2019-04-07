@@ -166,7 +166,9 @@
         console.log("hoisting_val = " + hoisting_val);
     }
     // 실행 결과
-    // hoisting_val = 10
+    /*
+    hoisting_val = 10
+    */
     
     // 함수 표현식
     hoistingExam2();
@@ -175,14 +177,18 @@
         console.log("hoisting_val = " + hoisting_val);
     }
     // 실행 결과
-    // hoistingExam2 of object is not a function
+    /*
+    hoistingExam2 of object is not a function
+    */
     
     // Function 생성자
     hoistingExam3();  
     var hoistingExam3 = new Function("","return console.log('Ya-ho!!');");
     
     // 실행 결과
-    // hoistingExam3 of object is not a function
+    /*
+    hoistingExam3 of object is not a function
+    */
 ```
 * 함수 표현식과 Function 생성자는 왜 호이스팅이 되지 않을까????
     -> 그 이유는 두 방식은 변수에 함수를 초기화 시키기 때문에 선언문이 호이스팅 되어 상단으로 올려진다 하더라도
