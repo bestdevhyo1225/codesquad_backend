@@ -128,8 +128,65 @@
     3. 우측 코드처럼  함수 안에서 f1 안에서 f2 를 호출 했다고 해서 f2 에서 f1의 내부 변수 a를 참조할 수 없다.<br>
         **렉시컬 특성으로 인해서 함수 f2가 실행될 때가 아닌 정의될 때의 환경을 보기 때문에**
 ---
-
 ### 1.2 호이스팅 (Hoisting)
+* 호이스팅은 "**변수 선언문**을 끌어올린다." 라고 이해하면 된다.
 
-> ### **유효범위 체인 (Scope Chain)**
+```javascript
+    function hoistingExam() {
+        console.log("value = " + value);
+        var value = 10;                                     
+        console.log("value = " + value);
+    }
+    
+    hoistingExam();
+    
+    // 실행 결과
+    /*
+    value = undefined
+    value = 10
+    */
+```
+
+```javascript
+    // 위의 함수는 다음과 같이 동작
+    function hoistingExam() {
+        var value;  // 선언
+        console.log("value = " + value);
+        value = 10;
+        console.log("value = " + value);
+    }
+```
+* 함수 호이스팅에 있어서 한가지 기억해야할 것은 "**함수 선언문 방식만 호이스팅이 가능하다.**" 라는 점이다.
+
+```javscript
+    // 함수 선언문
+    hoistingExam();
+    function hoistingExam() {
+        var hoisting_val = 10;
+        console.log("hoisting_val = " + hoisting_val);
+    }
+    // 실행 결과
+    // hoisting_val = 10
+    
+    // 함수 표현식
+    hoistingExam2();
+    var hoistingExam = function() {
+        var hoisting_val = 10;
+        console.log("hoisting_val = " + hoisting_val);
+    }
+    // 실행 결과
+    // hoistingExam2 of object is not a function
+    
+    // Function 생성자
+    hoistingExam3();  
+    var hoistingExam3 = new Function("","return console.log('Ya-ho!!');");
+    
+    // 실행 결과
+    // hoistingExam3 of object is not a function
+```
+* 함수 표현식과 Function 생성자는 왜 호이스팅이 되지 않을까????
+    -> 그 이유는 두 방식은 변수에 함수를 초기화 시키기 때문에 선언문이 호이스팅 되어 상단으로 올려진다 하더라도
+        함수가 아닌 변수로 인지되기 때문에 변수 호이스팅과 같은 undefined 를 출력하게 된다.
 ---
+> ### **참고 사이트**
+[ nextree - JavaScript : Scope 이해 ](http://www.nextree.co.kr/p7363/)
