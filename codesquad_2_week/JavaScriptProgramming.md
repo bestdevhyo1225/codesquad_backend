@@ -146,7 +146,6 @@
     value = 10
     */
 ```
-
 ```javascript
     // 위의 함수는 다음과 같이 동작
     function hoistingExam() {
@@ -169,7 +168,8 @@
     /*
     hoisting_val = 10
     */
-    
+```
+```javascript
     // 함수 표현식
     hoistingExam2();
     var hoistingExam2 = function() {
@@ -180,7 +180,8 @@
     /*
     hoistingExam2 of object is not a function
     */
-    
+```
+```javscript
     // Function 생성자
     hoistingExam3();  
     var hoistingExam3 = new Function("","return console.log('Ya-ho!!');");
