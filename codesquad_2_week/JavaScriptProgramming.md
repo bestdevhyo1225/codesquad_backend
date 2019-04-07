@@ -170,7 +170,7 @@
     
     // 함수 표현식
     hoistingExam2();
-    var hoistingExam = function() {
+    var hoistingExam2 = function() {
         var hoisting_val = 10;
         console.log("hoisting_val = " + hoisting_val);
     }
