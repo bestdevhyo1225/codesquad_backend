@@ -130,7 +130,6 @@
 ---
 ### 1.2 호이스팅 (Hoisting)
 * 호이스팅은 "**변수 선언문**을 끌어올린다." 라고 이해하면 된다.
-
 ```javascript
     function hoistingExam() {
         console.log("value = " + value);
@@ -156,7 +155,6 @@
     }
 ```
 * 함수 호이스팅에 있어서 한가지 기억해야할 것은 "**함수 선언문 방식만 호이스팅이 가능하다.**" 라는 점이다.
-
 ```javscript
     // 함수 선언문
     hoistingExam();
@@ -168,7 +166,7 @@
     /*
     hoisting_val = 10
     */
-```
+```         
 ```javascript
     // 함수 표현식
     hoistingExam2();
@@ -180,7 +178,7 @@
     /*
     hoistingExam2 of object is not a function
     */
-```
+```             
 ```javscript
     // Function 생성자
     hoistingExam3();  
@@ -190,7 +188,7 @@
     /*
     hoistingExam3 of object is not a function
     */
-```
+```             
 * 함수 표현식과 Function 생성자는 왜 호이스팅이 되지 않을까????
     -> 그 이유는 두 방식은 변수에 함수를 초기화 시키기 때문에 선언문이 호이스팅 되어 상단으로 올려진다 하더라도
         함수가 아닌 변수로 인지되기 때문에 변수 호이스팅과 같은 undefined 를 출력하게 된다.
