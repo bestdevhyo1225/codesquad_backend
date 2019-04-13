@@ -2,16 +2,17 @@ const myReduce = (arr, callback, initialValue) => {
     let preValue = initialValue;
     for (let i = 0; i < arr.length; i++) {
         if (preValue === undefined) preValue = arr[i++];
-        preValue = callback(preValue, arr[i]);
+        preValue = callback(preValue, arr[i], i);
     }
     return preValue;
 }
 
 // test1 -> 모든 합
 const input = [9, 2, 8, 5, 7];
-const result = myReduce( input, (pre, val) => {
+const result = myReduce( input, (pre, val, i) => {
+    console.log(`index = ${i}`);
     return pre + val;
-} );
+}, );
 console.log(result); // 31
 
 // test2 -> 문자열의 길이 모으기
