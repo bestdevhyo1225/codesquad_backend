@@ -1,6 +1,6 @@
 # JavaScript Programming
 
-> ###forEach 반복문
+> ### forEach 반복문
 
 * 오직 Array 객체에서만 사용 가능한 메서드이다. 배열의 요소들을 반복하여 작업을 수행할 수 있다.
 
