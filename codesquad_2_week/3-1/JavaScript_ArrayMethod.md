@@ -45,7 +45,7 @@ const arr2 = arr1.filter( (element) => { return element % 5 === 0; } )
 console.log(arr2);
 ```
 
-> ###reduce(callback)
+> ### reduce(callback)
 
 * reduce 메소드는 **filter, find, map 메소드를 모두 대체할 수 있는 아주 유연한 메소드**이다.
 * filter, find, map 으로 구현할 수 있는 문제라면 reduce 로도 구현할 수 있다.
@@ -53,11 +53,11 @@ console.log(arr2);
 
 > ### [ e1, e2, e3, … ].reduce(callback[, initialValue])
 >
-> > ####**callback**
+> > #### **callback**
 >
 >   		1. **previousValue** : 이전 마지막 콜백 호출에서 반환된 값 또는 공급된 경우 initialValue
->   		2. **currentValue **: 배열 내에서 현재 처리되고 있는 요소 (element)
->   		3. **currentIndex ** : 배열 내 현재 처리되고 있는 요소의 인덱스
+>   		2. **currentValue**: 배열 내에서 현재 처리되고 있는 요소 (element)
+>   		3. **currentIndex** : 배열 내 현재 처리되고 있는 요소의 인덱스
 >   		4. **[ e1, e2, e3, … ]** : reduce 에 호출 되는 배열
 >
 > > #### **intialValue**
