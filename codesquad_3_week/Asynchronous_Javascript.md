@@ -1,4 +1,4 @@
-##Javascript - Call Stack, Task Queue, Event Loop
+## Javascript - Call Stack, Task Queue, Event Loop
 
 ---
 
@@ -116,7 +116,7 @@
 
 ---
 
-> ###참고사이트
+> ### 참고사이트
 
 * [https://alex-dh.tistory.com/9](https://alex-dh.tistory.com/9)
 
