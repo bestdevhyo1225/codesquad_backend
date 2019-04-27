@@ -14,24 +14,18 @@
 >   클래스에 담는 내용 중 중요한 데이터를 외부로 부터 보호할 수 있다.
 >
 >  * 일반 OOP 에서 지원하는 캡슐화 ( C++, Java 등등)
-> >
-> > * **public**
-> > * **protected**
-> > * **private**
-> >
+> >**1. public**
+> > **2. protected**
+> > **3. private**
 >  * JavaScript 에서 캡슐화
-> >
-> > * **기본 public**
-> >
-> > * **private, protected 에 ' _ ' 붙여서 선언** 
-> >
-> >   ex) this._name = 'hyo' 과 같이 선언하는데 **접근하지 말라는 암묵적인 약속**일 뿐이다.
->
-> * 만일의 상황 ( 누군가가 외부에서 조작 ) 에 대비하여 외부에서 사용자가 특정 속성이나 메소드를 사용할 수 없도록
->   숨겨 놓은것이다.
->* 속성과 메소드를 클래스로 묶고 내부에서 구현하여 외부로부터 감추는 것이다.
-> * 객체가 노출하는 속성과 메소드만 사용자가 사용할 수 있다.
->* 속성과 메소드를 보호하는 이유는 **외부의 잘못된 사용으로 인해 객체가 손상되지 않기 위해서 보호 한다.** 
+> >**1. 기본 public**
+> > **2. private, protected 에 ' _ ' 붙여서 선언** 
+> > ex) this._name = 'hyo' 과 같이 선언하는데 **접근하지 말라는 암묵적인 약속**일 뿐이다.
+> 
+> * 만일의 상황( 누군가가 외부에서 조작 )에 대비하여 외부에서 사용자가 속성이나 메소드를 사용할 수 없도록 숨겨 놓은것이다.
+> * 속성과 메소드를 클래스로 묶고 내부에서 구현하여 외부로부터 감추는 것이다.
+>* 객체가 노출하는 속성과 메소드만 사용자가 사용할 수 있다.
+>   * 속성과 메소드를 보호하는 이유는 **외부의 잘못된 사용으로 인해 객체가 손상되지 않기 위해서 보호 한다.** 
 > 
 >![그림](https://image3.slideserve.com/5639790/4-encapsulation-n.jpg)
 
@@ -86,21 +80,22 @@
 >
 > ```java
 > class Obj {
->     public void a(int param){
->         System.out.println("숫자출력");
->         System.out.println(param);
->     }
->     public void a(String param){
->         System.out.println("문자출력");
->         System.out.println(param);
->     }
+> 	public void a(int param) {
+> 			System.out.println("숫자출력");
+>     	System.out.println(param);
+>   }
+>   
+> 	public void a(String param) {
+>      	System.out.println("문자출력");
+>      	System.out.println(param);
+>  	}
 > }
 > public class PolymorphismOverloadingDemo {
->     public static void main(String[] args) {
->         Obj obj = new Obj();
->         obj.a(1);
->         obj.a("one");
->     }
+>  		public static void main(String[] args) {
+>      		Obj obj = new Obj();
+>      		obj.a(1);
+>      		obj.a("one");
+>  		}
 > }
 > ```
 >
@@ -121,36 +116,36 @@
 > interface mother() {}
 > interface believer() {}
 > interface programmer() {
-> 		public void coding();
+> 	public void coding();
 > }
 > 
 > class Steve implements father, believer, programmer {
->   	public void coding() {
->       	System.out.println("fast!");
->     }
+> 	public void coding() {
+>    	System.out.println("fast!");
+>  }
 > }
 > 
 > class Rachel implements mother, programmer {
->   	public void coding() {
->       	System.out.println("elegance~");
->     }
+> 	public void coding() {
+>    	System.out.println("elegance~");
+>  }
 > }
 > 
 > // 직장에서..
 > public class WorkSpace {
->   	public static void main(String[] args) {
->       	programmer employee1 = new Steve();
->       	programmer employee2 = new Rachel();
->       
->       	employee1.coding();	// fast!
->       	employee2.coding();	// elegance~
->     }
+> 	public static void main(String[] args) {
+>    	programmer employee1 = new Steve();
+>    	programmer employee2 = new Rachel();
+>    
+>    	employee1.coding();	// fast!
+>    	employee2.coding();	// elegance~
+>  }
 > }
 > ```
 >
 > > * Steve 와 Rachel 의 사용자인 직장(WorkSpace)에서는 Steve 와 Rachel 의 인터페이스인 programmer를 통해서 두 사람과 관계 한다.
 > >
-> > * 회사에서는 코딩할 수 있는 사람이 필요하고 어떤 사람이 programmer 라는 인터페이스를 구현하고 있다면> >
+> > * 회사에서는 코딩할 수 있는 사람이 필요하고 어떤 사람이 programmer 라는 인터페이스를 구현하고 있다면> 
 > >   그 사람은 반드시 coding 이라는 메소드를 구현하고 있을 것이다.
 > >
 > > * 하지만 두 사람의 성향과 업무 능력에 따라 다른 결과물은 다르다.
