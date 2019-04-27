@@ -81,24 +81,25 @@
 > > * 하지만 overloding 은 가장 이해하기 쉬운 다형성의 예라고 할 수 있다.
 >
 > ```java
-> class Obj {
-> 	public void a(int param) {
-> 			System.out.println("숫자출력");
->     	System.out.println(param);
->   }
+>   class Obj {
+>       public void a(int param) {
+> 	        System.out.println("숫자출력");
+>           System.out.println(param);
+>       }
 >   
-> 	public void a(String param) {
->      	System.out.println("문자출력");
->      	System.out.println(param);
->  	}
-> }
-> public class PolymorphismOverloadingDemo {
->  		public static void main(String[] args) {
->      		Obj obj = new Obj();
->      		obj.a(1);
->      		obj.a("one");
->  		}
-> }
+>       public void a(String param) {
+>   	        System.out.println("문자출력");
+>           System.out.println(param);
+>  	    }
+>   }
+>
+>   public class PolymorphismOverloadingDemo {
+>  	    public static void main(String[] args) {
+>   	        Obj obj = new Obj();
+>           obj.a(1);
+>           obj.a("one");
+>  	    }
+>   }
 > ```
 >
 > > * 클래스 Obj 의 메소드 a는 2개의 본체를 가지고 있는데 하나의 이름인 a 를 공유하고 있다.
@@ -114,35 +115,35 @@
 > > * 이러한 관계를 코드로 표현해 본다면 다음과 같다.
 >
 > ```java
-> interface father() {}
-> interface mother() {}
-> interface believer() {}
-> interface programmer() {
-> 	public void coding();
-> }
+>   interface father() {}
+>   interface mother() {}
+>   interface believer() {}
+>   interface programmer() {
+> 	    public void coding();
+>   }
 > 
-> class Steve implements father, believer, programmer {
-> 	public void coding() {
->    	System.out.println("fast!");
->  }
-> }
+>   class Steve implements father, believer, programmer {
+> 	    public void coding() {
+>    	    System.out.println("fast!");
+>       }
+>   }
 > 
-> class Rachel implements mother, programmer {
-> 	public void coding() {
->    	System.out.println("elegance~");
->  }
-> }
+>    class Rachel implements mother, programmer {
+> 	    public void coding() {
+>    	    System.out.println("elegance~");
+>       }
+>   }
 > 
-> // 직장에서..
-> public class WorkSpace {
-> 	public static void main(String[] args) {
->    	programmer employee1 = new Steve();
->    	programmer employee2 = new Rachel();
+>   // 직장에서..
+>   public class WorkSpace {
+> 	    public static void main(String[] args) {
+>    	    programmer employee1 = new Steve();
+>    	    programmer employee2 = new Rachel();
 >    
->    	employee1.coding();	// fast!
->    	employee2.coding();	// elegance~
->  }
-> }
+>    	    employee1.coding();	// fast!
+>    	    employee2.coding();	// elegance~
+>       }
+>   }
 > ```
 >
 > > * Steve 와 Rachel 의 사용자인 직장(WorkSpace)에서는 Steve 와 Rachel 의 인터페이스인 programmer를 통해서 두 사람과 관계 한다.
