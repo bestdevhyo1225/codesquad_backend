@@ -82,23 +82,23 @@
 >
 > ```java
 >   class Obj {
->       public void a(int param) {
-> 	        System.out.println("숫자출력");
->           System.out.println(param);
->       }
->   
->       public void a(String param) {
->   	        System.out.println("문자출력");
->           System.out.println(param);
->  	    }
+>      public void a(int param) {
+>     System.out.println("숫자출력");
+>        System.out.println(param);
+>      }
+>      
+>      public void a(String param) {
+>       System.out.println("문자출력");
+>        System.out.println(param);
+>    }
 >   }
 >
 >   public class PolymorphismOverloadingDemo {
->  	    public static void main(String[] args) {
->   	        Obj obj = new Obj();
->           obj.a(1);
->           obj.a("one");
->  	    }
+>    public static void main(String[] args) {
+>       Obj obj = new Obj();
+>        obj.a(1);
+>        obj.a("one");
+>    }
 >   }
 > ```
 >
@@ -119,30 +119,30 @@
 >   interface mother() {}
 >   interface believer() {}
 >   interface programmer() {
-> 	    public void coding();
+>   public void coding();
 >   }
 > 
 >   class Steve implements father, believer, programmer {
-> 	    public void coding() {
->    	    System.out.println("fast!");
->       }
+>   public void coding() {
+>        System.out.println("fast!");
+>      }
 >   }
 > 
->    class Rachel implements mother, programmer {
-> 	    public void coding() {
->    	    System.out.println("elegance~");
->       }
+>   class Rachel implements mother, programmer {
+>   public void coding() {
+>        System.out.println("elegance~");
+>      }
 >   }
 > 
 >   // 직장에서..
 >   public class WorkSpace {
-> 	    public static void main(String[] args) {
->    	    programmer employee1 = new Steve();
->    	    programmer employee2 = new Rachel();
->    
->    	    employee1.coding();	// fast!
->    	    employee2.coding();	// elegance~
->       }
+>   public static void main(String[] args) {
+>        programmer employee1 = new Steve();
+>        programmer employee2 = new Rachel();
+>        
+>        employee1.coding();	// fast!
+>        employee2.coding();	// elegance~
+>      }
 >   }
 > ```
 >
