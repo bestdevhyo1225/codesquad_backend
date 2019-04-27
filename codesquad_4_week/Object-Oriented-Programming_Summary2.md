@@ -141,8 +141,8 @@
 >             
 >            employee1.coding();
 >            employee2.coding();
->    		}
->    }
+>    	}
+>   }
 >   ```
 > 
 >> * Steve 와 Rachel 의 사용자인 직장(WorkSpace)에서는 Steve 와 Rachel 의 인터페이스인 programmer를 통해서 두 사람과 관계 한다.
