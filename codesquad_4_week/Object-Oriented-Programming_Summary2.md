@@ -81,85 +81,80 @@
 > > * 하지만 overloding 은 가장 이해하기 쉬운 다형성의 예라고 할 수 있다.
 >
 > ```java
->   class Obj {
->      public void a(int param) {
->     System.out.println("숫자출력");
->        System.out.println(param);
->      }
->      
->      public void a(String param) {
->       System.out.println("문자출력");
->        System.out.println(param);
+>   class O{
+>        public void a(int param){
+>            System.out.println("숫자출력");
+>            System.out.println(param);
+>        }
+>        public void a(String param){
+>            System.out.println("문자출력");
+>            System.out.println(param);
+>        }
 >    }
->   }
->
 >   public class PolymorphismOverloadingDemo {
 >    public static void main(String[] args) {
->       Obj obj = new Obj();
->        obj.a(1);
->        obj.a("one");
+>           O o = new O();
+>            o.a(1);;
+>            o.a("one");
+>        }
 >    }
->   }
-> ```
->
-> > * 클래스 Obj 의 메소드 a는 2개의 본체를 가지고 있는데 하나의 이름인 a 를 공유하고 있다.
-> > * 같은 이름이지만 서로 다른 동작 방법을 가지고 있기 때문에 오버로딩은 다형성의 한 예라고 할 수 있다.
->
+>    ```
+>   
+> > * 클래스 O 의 메소드 a는 2개의 본체를 가지고 있는데 하나의 이름인 a 를 공유하고 있다.
+>> * 같은 이름이지만 서로 다른 동작 방법을 가지고 있기 때문에 오버로딩은 다형성의 한 예라고 할 수 있다.
+> 
 > * Steve 와 Rachel 예시를 통해 다형성 이해하기
 >
 > > * Steve 는 집에서는 아버지이고 직업적으로는 프로그래머이다. 또 종교단체에서는 신도(believer)가 될 수 있다.
-> > * 하나의 사람이지만 그가 어디에 있는지 누구와 관계하는지에 따라서 아버지이며 프로그래머이자 신도이다.
+>> * 하나의 사람이지만 그가 어디에 있는지 누구와 관계하는지에 따라서 아버지이며 프로그래머이자 신도이다.
 > > * Rachel 은 집에서는 엄마이고 직업적으로는 프로그래머이다.
 > > * 중요한 것은 Steve 와 Rachel 은 직장에서 프로그래머이고 다른곳에서 무엇이든지 신경쓰지 않는다.
 > > * 따라서 직장에서는 코딩을 요청하면 된다. 하지만 실력이나 성향에 따라 Steve 와 Rachel 의 결과물을 달라질 것이다. 
 > > * 이러한 관계를 코드로 표현해 본다면 다음과 같다.
->
+> 
 > ```java
->   interface father() {}
->   interface mother() {}
->   interface believer() {}
->   interface programmer() {
->   public void coding();
+>interface father{}
+> interface mother{}
+>   interface believer{}
+>   interface programmer{
+>       public void coding();
 >   }
-> 
->   class Steve implements father, believer, programmer {
->   public void coding() {
->        System.out.println("fast!");
->      }
+>   
+>   class Steve implements father, programmer, believer{
+>     public void coding(){
+>           System.out.println("fast");
+>       }
+>    }
+>    class Rachel implements mother, programmer{
+>       public void coding(){
+>         System.out.println("elegance");
+>       }
 >   }
-> 
->   class Rachel implements mother, programmer {
->   public void coding() {
->        System.out.println("elegance~");
->      }
->   }
-> 
->   // 직장에서..
->   public class WorkSpace {
->   public static void main(String[] args) {
->        programmer employee1 = new Steve();
->        programmer employee2 = new Rachel();
->        
->        employee1.coding();	// fast!
->        employee2.coding();	// elegance~
->      }
->   }
-> ```
->
-> > * Steve 와 Rachel 의 사용자인 직장(WorkSpace)에서는 Steve 와 Rachel 의 인터페이스인 programmer를 통해서 두 사람과 관계 한다.
-> >
-> > * 회사에서는 코딩할 수 있는 사람이 필요하고 어떤 사람이 programmer 라는 인터페이스를 구현하고 있다면
+>    public class Workspace{
+>        public static void main(String[] args){
+>           programmer employee1 = new Steve();
+>         programmer employee2 = new Rachel();
+>            
+>           employee1.coding();
+>           employee2.coding();
+>        }
+>    }
+>    ```
+>    
+>    > * Steve 와 Rachel 의 사용자인 직장(WorkSpace)에서는 Steve 와 Rachel 의 인터페이스인 programmer를 통해서 두 사람과 관계 한다.
+>    >
+>   > * 회사에서는 코딩할 수 있는 사람이 필요하고 어떤 사람이 programmer 라는 인터페이스를 구현하고 있다면
 > >   그 사람은 반드시 coding 이라는 메소드를 구현하고 있을 것이다.
-> >
+>>
 > > * 하지만 두 사람의 성향과 업무 능력에 따라 다른 결과물은 다르다.
->
+> 
 > * 결론 ( 내가 이해한 다형성 )
->
+> 
 > > * 다형성이란 동일한 조작을 할 수 있는 어떠한 정보나 기능을 제공해 준다. ( interface 제공 )
 > >
-> > * 나와 다른사람이 똑같은 기능을 사용하지만 어떻게 사용하냐에 따라서 결과물이 달라지는 것을 말한다.
+>> * 나와 다른사람이 똑같은 기능을 사용하지만 어떻게 사용하냐에 따라서 결과물이 달라지는 것을 말한다.
 > >     ( 나와 다른 사람이 다른 형태를 지니고 있는 것이라고 이해 하고 있다. )
-> >    ( 키보드에서 '누른다' 를 통해 A키는 다른 형태를 띄우고 있고, B키는 또 다른 형태를 띄우고 있는것이 특징  )
+>>    ( 키보드에서 '누른다' 를 통해 A키는 다른 형태를 띄우고 있고, B키는 또 다른 형태를 띄우고 있는것이 특징  )
 > >   ( Steve는 빠르게 코딩을하고, Rachel은 우아하게 코딩을 한다. )
 > >
 
